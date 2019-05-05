@@ -11,3 +11,7 @@ node_modules
 # 임시 파일
 *.tmp
 *~
+
+# es5 폴더 - es6 소스만 추적한다
+dist
+public/dist
