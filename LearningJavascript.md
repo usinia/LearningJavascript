@@ -102,61 +102,82 @@ $ git push origin --delete `develop` # develop 브런치 삭제
     1. `$ git init`
     1. `.gitignore` 파일 생성
 1. [node 설치](https://nodejs.org/en/)
-```shell
-$ node -v # 버전확인
-$ npm -v # 버전확인
-$ cd [프로젝트 루트]
-$ npm install `underscore` # 패키지 인스톨
-$ npm install `underscore@1.8.0` # 버전명시
-$ npm init # 프로젝트에 필요한 패키지 의존성 관리 (package.json) (일반/개발의존성)
-$ npm install --save/--save-dev `underscore` # package.json에 저장되지 않는 개발의존성 패키지
-```
-1. gulp 설치
-```shell
-$ npm install -g gulp # global 전역에 설치
-$ sudo npm install -g gulp # mac 권한 때문에 설치 오류시
-```
-    1. ___그래도 안되면___
-    ```bash
-    $ sudo npm install -g gulp --unsafe-perm=true --allow-root
-    ```
-    1. mac 권한 관련 명령어
     ```shell
-    $ csrutil status # disable (재시동-복구모드-터미널 $ csrutil disable). rootless
-    $ whoami # 현사용자
-    $ sudo -s # root 사용자
-    $ chown [-r] owner[:group] file(s) # 폴더[하위폴더] 소유자:그룹 권한 변경
+    $ node -v # 버전확인
+    $ npm -v # 버전확인
+    $ cd [프로젝트 루트]
+    $ npm install `underscore` # 패키지 인스톨
+    $ npm install `underscore@1.8.0` # 버전명시
+    $ npm init # 프로젝트에 필요한 패키지 의존성 관리 (package.json) (일반/개발의존성)
+    $ npm install --save/--save-dev `underscore` # package.json에 저장되지 않는 개발의존성 패키지
     ```
+1. gulp 설치
+    ```shell
+    $ npm install -g gulp # global 전역에 설치
+    $ sudo npm install -g gulp # mac 권한 때문에 설치 오류시
+    ```
+    * ___그래도 안되면___
+        ```shell
+        $ sudo npm install -g gulp --unsafe-perm=true --allow-root
+        ```
+    * mac 권한 관련 명령어
+        ```shell
+        $ csrutil status # disable (재시동-복구모드-터미널 $ csrutil disable). rootless
+        $ whoami # 현사용자
+        $ sudo -s # root 사용자
+        $ chown [-r] owner[:group] file(s) # 폴더[하위폴더] 소유자:그룹 권한 변경
+        ```
 
 1. [Babel 설치 - gulp](https://babeljs.io/setup#installation), [Babel option docs](https://babeljs.io/docs/en/options), [gulp-babel github](https://github.com/babel/gulp-babel)
-```shell
-# Babel 6
-$ npm install --save-dev gulp-babel
-```
-```shell
-# Babel 7
-$ npm install --save-dev gulp-babel@next @babel/core
-```
-```javascript
-// gulpfile.js
-var gulp = require("gulp");
-var babel = require("gulp-babel");
-gulp.task("default", function () {
-    return gulp.src("src/app.js") // es6 폴더 경로
-        .pipe(babel())              // 바벨이 es6 -> es5 변환. 트랜스 컴파일
-        .pipe(gulp.dest("dist"));   // es5 폴더 경로. gulp가 소스 경로를 그대로 유지
-});
-```
-```shell
-# es6 preset
-$ npm install @babel/preset-env --save-dev
-```
-`.babelrc`
-```json
-{
-  "presets": ["@babel/preset-env"]
-}
-```
+    ```shell
+    # Babel 6
+    $ npm install --save-dev gulp-babel
+    ```
+    ```shell
+    # Babel 7
+    $ npm install --save-dev gulp-babel@next @babel/core
+    ```
+    ```javascript
+    // gulpfile.js
+    var gulp = require("gulp");
+    var babel = require("gulp-babel");
+    gulp.task("default", function () {
+        return gulp.src("src/app.js") // es6 폴더 경로
+            .pipe(babel())              // 바벨이 es6 -> es5 변환. 트랜스 컴파일
+            .pipe(gulp.dest("dist"));   // es5 폴더 경로. gulp가 소스 경로를 그대로 유지
+    });
+    ```
+
+    * es6 preset
+    ```shell
+    # Babel 6
+    $ npm install babel-preset-env --save-dev
+    ```
+    ```shell
+    # Babel 7
+    $ npm install @babel/preset-env --save-dev
+    ```
+    * .babelrc
+        * Babel 6
+        ```json
+        {
+        "presets": ["env"]
+        }
+        ```
+        * Babel 7
+        ```json
+        {
+        "presets": ["@babel/preset-env"]
+        }
+        ```
+    
+    * 버전 때문에 꼬였을 경우
+        ```shell
+        # 현재 설치 된 npm 버전 확인 후 uninstall/remove 후 버전 명시하여 재설치
+        npm list --depth=0
+        ```
+        * node_modules 폴더 삭제
+
     1. 설치 완료
         1. 터미널에서 `gulp` 명령어 실행. es6 파일이 es5로 변환되었는지 es5 폴더에서 확인
     1. 실행
@@ -165,6 +186,7 @@ $ npm install @babel/preset-env --save-dev
         $ node es6/test.js # es6 파일
         $ node dist/test.js # es5 파일
     ```
+    
 1. [ESLint 설치](https://eslint.org/)
 ```shell
 # gulp eslint 설치
