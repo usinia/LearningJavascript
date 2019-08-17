@@ -2,7 +2,7 @@
 
 러닝 자바 스크립트 - 이선 브라운 / 한빛미디어
 
-자바스크립트 레퍼런스 메뉴얼 : [모질라 개발자 네트워크(MDN)](https://`develop`er.mozilla.org/ko/docs/Web/JavaScript)
+자바스크립트 레퍼런스 메뉴얼 : [모질라 개발자 네트워크(MDN)](https://developer.mozilla.org/ko/docs/Web/JavaScript)
 
 ---
 ## 1. 시작하기
@@ -22,22 +22,31 @@
 
 
 ## 2-1. 참고 사이트
-- [css와 HTML 무료 강좌](https://www.codecademy.com/learn/learn-html)
+* .1. 첫 번째 어플리케이션
+    * [모질라 개발자 네트워크 MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript)
+    * [css와 HTML 무료 강좌](https://www.codecademy.com/learn/learn-html)
 
-- [ES6와 ES7 기능별 호환성 테이블](http://kangax.github.io/compat-table/es6/)
+* .2. 자바스크립트 개발 도구
+    * [ES6와 ES7 기능별 호환성 테이블](http://kangax.github.io/compat-table/es6/)
+    * bash terminal 강좌 [트리하우스 콘솔 기초 강의](https://teamtreehouse.com/library/introduction-to-the-terminal)
+    * [git 초보자용 자료](https://git-scm.com)
+    * [github 초보용 자료](http://try.github.io), [github 한글 깃문서](https://git-scm.com/book/ko/v2)
+    * 패키지 관리 도구 [npm 설치](https://nodejs.org/en/)
+    * 자바스크립트에서 널리 쓰는 빌드 도구 [그런트](https://gruntjs.com/), [걸프](https://gulpjs.com/)
+    * 널리 쓰이는 트랜스 컴파일러 [바벨](https://babeljs.io), [바벨 API](https://babeljs.io/docs/en/options), [트레이서](https://github.com/google/traceur-compiler)
 
-- [git 설치](https://git-scm.com)
+* .5. 표현식과 연산자
+    * [칸 아카데미 mod 연산자](https://ko.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/what-is-modular-arithmetic)
 
-- [bash terminal 강좌, 트리하우스 콘솔 기초 강의](https://teamtreehouse.com/library/introduction-to-the-terminal)
+* .6. 함수
+    * [MDN this 키워드](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/this)
 
-- [github 초보용 자료](http://try.github.io)
+* .7. 스코프
+    * [MDN 스트릭모드](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Strict_mode)
 
-- [github 한글 깃문서](https://git-scm.com/book/ko/v2)
+* .17. 정규표현식
+    * [정규식 101](https://regex101.com/)
 
-- [패키지 관리 도구 npm 설치 - node.js 홈페이지](https://nodejs.org/en/)
-
-- [트랜스컴파일러 - 바벨](https://babeljs.io), [바벨 API](https://babeljs.io/docs/en/options)
-- [트랜스컴파일러 - 트레이서](https://github.com/google/traceur-compiler)
 ---
 
 ### @1. GIT 기본 명령어
@@ -227,3 +236,36 @@ gulp.task("default", function (done) {
         ```shell
         $ babel-node es6/example.js
         ```
+---
+
+## 1. 참고 사이트 (22. 추가자원 441p~)
+1. 온라인 문서
+    * 자바스크립트, CSS, HTML에 관한 문서 [MDN](https://developer.mozilla.org/ko/docs/Learn), 구글링시 mdn ~
+    * HTML5가 처음이라면 [Dive Into HTML5](http://diveinto.html5doctor.com/)
+    * [WHATWG](https://whatwg.org/) 살아있는 표준, HTML5 명세
+    * 노드와 브라우저 지원 es6 기능 [@kangax](http://kangax.github.io/compat-table/es6/)
+    * [제이쿼리](https://api.jquery.com/), [부트스트랩](http://bootstrapk.com/getting-started/)의 온라인 문서
+    * [공식 노드 문서](https://nodejs.org/ko/docs/) http, https, fs 같은 노드 모듈, [Node.js v10](https://nodejs.org/dist/latest-v10.x/docs/api/all.html), npm 문서 [pacakge.json](https://docs.npmjs.com/files/package.json)
+
+1. 주기적 발행물
+    * [JavaScript Weekly](https://javascriptweekly.com/)
+    * [Node Weekly](https://nodeweekly.com/)
+    * [HTML5 Weekly](https://frontendfoc.us/)
+
+1. 블로그
+    * [악셀 라우슈마이어의 블로그](https://2ality-com.onrender.com/) es6와 관련 기술에 관한 글
+    * [놀란 로손의 블로그](https://nolanlawson.com/) 실제 자바스크립트 개발에 관한 상세한 글, [We Have a Problem with Promises](https://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html)
+    * [데이빗 왈시의 블로그](https://davidwalsh.name/) 자바스크립트 개발 및 관련 기술, 14장 비동기가 이해가 되지 않았다면 [The Basics of ES6 Generators](https://davidwalsh.name/es6-generators)
+    * @kangax의 블로그 [Perfection Kills](http://perfectionkills.com/)  훌륭한 가이드와 연습문제, 퀴즈
+
+1. 가이드
+    * [Lynda.com의 자바스크립트 가이드](https://www.lynda.com/JavaScript-training-tutorials/244-0.html)
+    * [트리하우스의 자바스크립트 강좌](https://teamtreehouse.com/learn/javascript)
+    * [코드아카데미의 자바스크립트 강좌](https://www.codecademy.com/learn/introduction-to-javascript)
+    * [마이크로소프트 버추얼 아카데미의 자바스크립트 초급 강좌](https://docs.microsoft.com/en-us/learn/modules/build-simple-website/), [mvc js github](https://github.com/MicrosoftLearning/JavaScript-Experienced-Developers), [마이크로소프트 버추얼 아카데미](https://www.microsoft.com/ko-kr/learning/training.aspx)
+
+1. 스택 오버플로우
+
+1. 오픈 소스 프로젝트
+    * 스콧 한셀만의 [Bringing Kindness Back to Open Source](https://www.hanselman.com/blog/BringKindnessBackToOpenSource.aspx)
+    * 프로그래머와 오픈 소스 프로젝트를 연결하는 [Up for Grabs](https://up-for-grabs.net/)
