@@ -197,45 +197,45 @@ $ git push origin --delete `develop` # develop 브런치 삭제
     ```
     
 1. [ESLint 설치](https://eslint.org/)
-```shell
-# gulp eslint 설치
-$ sudo npm install -g eslint
-# .eslintrc 설정파일 만들기
-$ eslint --init
-# gulp eslint 실행 패키지 설치
-$ sudo npm install --save-dev gulp-eslint
-```
-```javascript
-// gulpfile.js
-var gulp = require("gulp");
-var babel = require("gulp-babel");
-var eslint = require("gulp-eslint")
-gulp.task("default", function (done) {
-    // ESLint 실행
-    gulp.src(["es6/**/*.js", "public/es6/**/*.js"]) // **은 서브디렉터리를 포함한 모든 디렉터리
-        .pipe(eslint())
-        .pipe(eslint.format());
-    // 노드 소스
-    gulp.src("es6/**/*.js")
-        .pipe(babel())
-        .pipe(gulp.dest("dist"));
-    // 브라우저 소스
-    gulp.src("public/es6/**/*.js")
-        .pipe(babel())
-        .pipe(gulp.dest("public/dist"));
-    done();
-});
-```
+    ```shell
+    # gulp eslint 설치
+    $ sudo npm install -g eslint
+    # .eslintrc 설정파일 만들기
+    $ eslint --init
+    # gulp eslint 실행 패키지 설치
+    $ sudo npm install --save-dev gulp-eslint
+    ```
+    ```javascript
+    // gulpfile.js
+    var gulp = require("gulp");
+    var babel = require("gulp-babel");
+    var eslint = require("gulp-eslint")
+    gulp.task("default", function (done) {
+        // ESLint 실행
+        gulp.src(["es6/**/*.js", "public/es6/**/*.js"]) // **은 서브디렉터리를 포함한 모든 디렉터리
+            .pipe(eslint())
+            .pipe(eslint.format());
+        // 노드 소스
+        gulp.src("es6/**/*.js")
+            .pipe(babel())
+            .pipe(gulp.dest("dist"));
+        // 브라우저 소스
+        gulp.src("public/es6/**/*.js")
+            .pipe(babel())
+            .pipe(gulp.dest("public/dist"));
+        done();
+    });
+    ```
     1. 설치 완료
         1. 터미널에서 `gulp` 명령어로 틀린 문법 검사
     1. 실행
-        ```shell
-        $ gulp
-        $ node dist/example.js
-        ```
-        ```shell
-        $ babel-node es6/example.js
-        ```
+    ```shell
+    $ gulp
+    $ node dist/example.js
+    ```
+    ```shell
+    $ babel-node es6/example.js
+    ```
 ---
 
 ## 1. 참고 사이트 (22. 추가자원 441p~)
