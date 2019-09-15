@@ -198,35 +198,35 @@ $ git push origin --delete `develop` # develop 브런치 삭제
     ```
     
 1. [ESLint 설치](https://eslint.org/)
-```shell
-# gulp eslint 설치
-$ sudo npm install -g eslint
-# .eslintrc 설정파일 만들기
-$ eslint --init
-# gulp eslint 실행 패키지 설치
-$ sudo npm install --save-dev gulp-eslint
-```
-```javascript
-// gulpfile.js
-var gulp = require("gulp");
-var babel = require("gulp-babel");
-var eslint = require("gulp-eslint")
-gulp.task("default", function (done) {
-    // ESLint 실행
-    gulp.src(["es6/**/*.js", "public/es6/**/*.js"]) // **은 서브디렉터리를 포함한 모든 디렉터리
-        .pipe(eslint())
-        .pipe(eslint.format());
-    // 노드 소스
-    gulp.src("es6/**/*.js")
-        .pipe(babel())
-        .pipe(gulp.dest("dist"));
-    // 브라우저 소스
-    gulp.src("public/es6/**/*.js")
-        .pipe(babel())
-        .pipe(gulp.dest("public/dist"));
-    done();
-});
-```
+    ```shell
+    # gulp eslint 설치
+    $ sudo npm install -g eslint
+    # .eslintrc 설정파일 만들기
+    $ eslint --init
+    # gulp eslint 실행 패키지 설치
+    $ sudo npm install --save-dev gulp-eslint
+    ```
+    ```javascript
+    // gulpfile.js
+    var gulp = require("gulp");
+    var babel = require("gulp-babel");
+    var eslint = require("gulp-eslint")
+    gulp.task("default", function (done) {
+        // ESLint 실행
+        gulp.src(["es6/**/*.js", "public/es6/**/*.js"]) // **은 서브디렉터리를 포함한 모든 디렉터리
+            .pipe(eslint())
+            .pipe(eslint.format());
+        // 노드 소스
+        gulp.src("es6/**/*.js")
+            .pipe(babel())
+            .pipe(gulp.dest("dist"));
+        // 브라우저 소스
+        gulp.src("public/es6/**/*.js")
+            .pipe(babel())
+            .pipe(gulp.dest("public/dist"));
+        done();
+    });
+    ```
     1. 설치 완료
         1. 터미널에서 `gulp` 명령어로 틀린 문법 검사
     1. 실행
@@ -237,6 +237,26 @@ gulp.task("default", function (done) {
         ```shell
         $ babel-node es6/example.js
         ```
+---
+
+## 7. 스코프와 클로저
+
+스코프
+> 스코프 scope는 변수와 상수, 매개변수가 언제 어디서 정의되는지 결정한다. (시야, 범위) 변수의 스코프가 어떤 함수라고 말할 때는, 함수를 실제 호출할 때까지는 함수 바디의 정해진 매개변수 formal argument 가 존재하지 않는다. 함수를 호출할 때마다 매개변수가 나타나고, 함수가 제어권을 반환하면 스코프 밖으로 사라진다.
+
+> 가시성 visibility 라고도 불리는 스코프는 프로그램의 현재 실행 중인 부분, _실행 컨텍스트 execution context_ 에서 현재 보이고 접근할 수 있는 식별자들을 말한다. 반면 존재한다는 말은 그 식별자가 메모리가 할당된 (예약된) 무언가를 가리키고 있다는 뜻이다. 존재하지만 스코프 안에는 없는 변수가 존재한다.
+
+> 자바스크립트는 정적 스코프다. 정적 스코프는 어떤 변수가 함수 스코프안에 있는지 함수를 _정의할 때_ 알 수 있다. _호출할 때_ 알 수 있는 것이 아니다. 자바스크립트의 정적 스코프는 _전역 스코프 global scope_, _블록 스코프 block scope_, _함수 스코프 function socpe_ 에 적용된다.
+
+클로저
+> 함수가 특정 스코프에 접근할 수 있도록 의도적으로 그 스코프에서 함수를 정의하는 경우, 이를 클로저 closure라고 부른다. 스코프를 함수 주변으로 좁히는 closing 것이라고 생각해도 된다.
+
+선언 declaration
+> 식별자를 주어서 그 존재를 알리는 것. `int a;`
+
+정의 definition
+> **선언과 함께 값도 부여하는 것** `int a = 3;` 자바스크립트는 자동으로 undefined가 할당된다.
+
 ---
 
 ## 1. 참고 사이트 (22. 추가자원 441p~)
