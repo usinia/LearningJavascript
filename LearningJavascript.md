@@ -185,6 +185,7 @@ $ git push origin --delete `develop` # develop 브런치 삭제
         # 현재 설치 된 npm 버전 확인 후 uninstall/remove 후 버전 명시하여 재설치
         npm list --depth=0
         ```
+        ![npm list --depth=0](images/npm_list_depth.png)
         * node_modules 폴더 삭제
 
     1. 설치 완료
