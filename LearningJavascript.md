@@ -70,7 +70,7 @@ $ git clone
 ```
 ```shell
 $ git init
-$ git remote origin https://github.com/…
+$ git remote add origin https://github.com/…
 $ git pull origin master
 ```
 
